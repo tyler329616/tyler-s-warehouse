@@ -1,0 +1,57 @@
+[
+  {
+    "id": "48677658",
+    "name": "GitHub",
+    "kind": "connector",
+    "status": "connected",
+    "skills": 0
+  },
+  {
+    "id": "45893410",
+    "name": "Gmail",
+    "kind": "connector",
+    "status": "needsAuth",
+    "skills": 0
+  },
+  {
+    "id": "48677659",
+    "name": "Playwright",
+    "kind": "connector",
+    "status": "connected",
+    "skills": 0
+  },
+  {
+    "id": "4902",
+    "name": "Appwrite",
+    "kind": "plugin",
+    "status": "partial (docs connected, api error)",
+    "skills": 10
+  },
+  {
+    "id": "674",
+    "name": "Slack",
+    "kind": "plugin",
+    "status": "error",
+    "skills": 6
+  },
+  {
+    "id": "52632771",
+    "name": "Mobbin",
+    "kind": "connector",
+    "status": "needsAuth",
+    "skills": 0
+  },
+  {
+    "id": "649",
+    "name": "Vercel",
+    "kind": "plugin",
+    "status": "connected",
+    "skills": 40
+  },
+  {
+    "name": "Browse",
+    "kind": "plugin",
+    "status": "installed (cache)",
+    "skills": 1
+  }
+]
