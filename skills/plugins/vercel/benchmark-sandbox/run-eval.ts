@@ -63,16 +63,21 @@ interface Scenario {
   userStories: [string, string, string];
 }
 
-const SCENARIOS: Scenario[] = [];
-let ACTIVE_SCENARIOS = SCENARIOS;
+const SCENARIOS: Scenario[] = [
+  {
+    slug: "ai-writing-assistant",
+    prompt: `Build a Next.js AI writing assistant app.`,
+    expectedSkills: ["ai-sdk", "swr", "shadcn", "routing-middleware", "geist", "nextjs"],
+    userStories: [
+      "As a user, I can see a text area where I can paste or type content to be processed by AI",
+      "As a user, I can select a mode (rewrite, expand, or summarize) and click a button to get an AI response",
+      "As a user, I can see the AI-generated response appear with streaming text output",
+    ],
+  },
+];
 
 function resolveApiKey(): string {
   if (process.env.ANTHROPIC_API_KEY) return process.env.ANTHROPIC_API_KEY;
-  try {
-    return execSync('security find-generic-password -a "$USER" -s "ANTHROPIC_AUTH_TOKEN" -w', {
-      encoding: "utf-8", timeout: 5000,
-    }).trim();
-  } catch {}
   console.error("Missing ANTHROPIC_API_KEY"); process.exit(1);
 }
 
