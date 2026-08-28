@@ -92,3 +92,17 @@ Comprehensive performance optimization guide for React and Next.js applications,
    - 8.1 [Initialize App Once, Not Per Mount](#81-initialize-app-once-not-per-mount)
    - 8.2 [Store Event Handlers in Refs](#82-store-event-handlers-in-refs)
    - 8.3 [useEffectEvent for Stable Callback Refs](#83-useeffectevent-for-stable-callback-refs)
+
+---
+
+## 1. Eliminating Waterfalls
+
+**Impact: CRITICAL**
+
+Waterfalls are the #1 performance killer. Each sequential await adds full network latency. Eliminating them yields the largest gains.
+
+### 1.1 Defer Await Until Needed
+
+**Impact: HIGH (avoids blocking unused code paths)**
+
+Move `await` operations into the branches where they're actually used to avoid blocking code paths that don't need them.
