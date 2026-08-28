@@ -23,3 +23,9 @@
  *   --scenarios a,b,c   Only run specific scenarios by slug
  *   --scenarios-file f  Load scenarios from a JSON file
  */
+
+import { Sandbox } from "@vercel/sandbox";
+import { readdir, readFile, stat, mkdir, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { homedir } from "node:os";
+import { execSync } from "node:child_process";
