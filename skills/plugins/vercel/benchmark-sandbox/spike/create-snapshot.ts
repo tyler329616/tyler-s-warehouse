@@ -46,7 +46,7 @@ if (flags.help) {
   process.exit(0);
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────
+// ── Helpers ─────────────────────────────────────────────────────────
 
 function resolveApiKey(): string {
   const key =
@@ -266,7 +266,7 @@ async function createSnapshot(): Promise<SnapshotMetadata> {
   }
 }
 
-// ── Verification ─────────────────────────────────────────────────────
+// ── Verification ────────────────────────────────────────────────────
 
 interface VerifyResult {
   bootDurationMs: number;
@@ -343,7 +343,7 @@ async function verifySnapshot(snapshotId: string): Promise<VerifyResult> {
   }
 }
 
-// ── Main ─────────────────────────────────────────────────────────────
+// ── Main ─────────────────────────────────────────────────────────
 
 async function main() {
   const t0 = performance.now();

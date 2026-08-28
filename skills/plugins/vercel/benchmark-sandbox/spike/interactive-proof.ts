@@ -65,13 +65,13 @@ interface StepResult {
   time: string;
 }
 
-// ── test prompt ──────────────────────────────────────────────
+// ── test prompt ──────────────────────────────────────────────────
 
 // Deliberately product-focused (not tech-focused) to exercise skill matching.
 // Should trigger: nextjs, ai-sdk at minimum.
 const TEST_PROMPT = `Create a Next.js app with a single page that uses the AI SDK to stream a response from a language model. The page should have an input field and a submit button. Keep it minimal.`;
 
-// ── main ───────────────────────────────────────────────────
+// ── main ─────────────────────────────────────────────────────────
 
 async function main() {
   const t0 = performance.now();
@@ -82,7 +82,7 @@ async function main() {
   let sandbox: InstanceType<typeof Sandbox> | undefined;
 
   try {
-    // ── Step 1: Create sandbox ─────────────────────────────────────
+    // ── Step 1: Create sandbox ───────────────────────────────────────
     console.log("[1/7] Creating sandbox (node24)...");
     const t1 = performance.now();
     const sandboxEnv: Record<string, string> = {
@@ -160,7 +160,7 @@ async function main() {
     ]);
     console.log(`  hooks.json: ${hooksCheck.out}`);
 
-    // ── Step 4: Check for PTY wrapper availability ───────────────────
+    // ── Step 4: Check for PTY wrapper availability ─────────────────
     console.log("[4/7] Checking PTY wrapper availability...");
     const t4 = performance.now();
     const scriptCheck = await run(sandbox, "sh", [
@@ -418,7 +418,7 @@ async function main() {
     }
   }
 
-  // ── summary ────────────────────────────────────────────────
+  // ── summary ────────────────────────────────────────────────────
   const allPassed = results.every((r) => r.ok);
   const hookStep = results.find((r) => r.step === "hook-verification");
   const sessionStep = results.find((r) => r.step === "claude-session");
